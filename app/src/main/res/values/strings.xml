@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dahabzone</string>
+    <string name="title_home">Hotels</string>
+    <string name="title_dashboard">Activites</string>
+    <string name="title_notifications">Restaurant</string>
+    <string name="Shopping">Shopping</string>
+    <string name="Nightlife">Nightlife</string>
+</resources>
