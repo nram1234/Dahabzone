@@ -32,14 +32,14 @@ public class Hotels_Adapter extends RecyclerView.Adapter<Hotels_Adapter.Hotels_V
     @Override
     public Hotels_ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.hotels, viewGroup, false);
+                .inflate(R.layout.hotels_item, viewGroup, false);
         return new Hotels_ViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull Hotels_ViewHolder hotels_viewHolder, int i) {
         Hotels_Datatype data = data_list.get(i);
-        hotels_viewHolder.name.setText(data.getName());
+        hotels_viewHolder.namee.setText(data.getName());
         hotels_viewHolder.imageView.setImageResource(data.getImage());
     }
 
@@ -52,7 +52,7 @@ public class Hotels_Adapter extends RecyclerView.Adapter<Hotels_Adapter.Hotels_V
     }
     public class Hotels_ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @BindView(R.id.hotels_name )
-        TextView name;
+        TextView namee;
         @BindView(R.id.hotels_image)
         ImageView imageView;
 
