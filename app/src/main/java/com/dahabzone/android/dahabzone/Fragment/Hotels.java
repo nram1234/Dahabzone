@@ -45,6 +45,6 @@ public class Hotels extends Fragment implements ItemClickListener {
 
     @Override
     public void onClick(View view, int position) {
-        
+
     }
 }

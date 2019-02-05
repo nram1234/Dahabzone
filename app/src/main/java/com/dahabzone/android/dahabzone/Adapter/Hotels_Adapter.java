@@ -64,6 +64,6 @@ public class Hotels_Adapter extends RecyclerView.Adapter<Hotels_Adapter.Hotels_V
 
         @Override
         public void onClick(View view) {
-
+            clickListener.onClick(view, getAdapterPosition());
         }
     }}
