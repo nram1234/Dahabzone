@@ -9,30 +9,40 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.dahabzone.android.dahabzone.Fragment.Activites;
 import com.dahabzone.android.dahabzone.Fragment.Hotels;
 import com.dahabzone.android.dahabzone.R;
+
+import butterknife.BindView;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     FragmentManager fragmentManager;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
+
                 case R.id.navigation_home:
                     Hotels ta = new Hotels();
                       fragmentManager=getSupportFragmentManager();
                       fragmentManager.beginTransaction().replace(R.id.fragment,ta).commit();
                     return true;
                 case R.id.navigation_dashboard:
-                 //   mTextMessage.setText(R.string.title_dashboard);
+                    Activites activites = new Activites();
+                    fragmentManager=getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.fragment,activites).commit();
+
                     return true;
                 case R.id.navigation_notifications:
-               //     mTextMessage.setText(R.string.title_notifications);
+
+                    //     mTextMessage.setText(R.string.title_notifications);
                     return true;
                 case R.id.Shopping:
               //      mTextMessage.setText(R.string.title_dashboard);
@@ -50,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // Hotels ta = new Hotels();
-      //  fragmentManager=getSupportFragmentManager();
-      //  fragmentManager.beginTransaction().replace(R.id.fragmant,ta).commit();
+        Hotels ta = new Hotels();
+        fragmentManager=getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fragment,ta).commit();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
